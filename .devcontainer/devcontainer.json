@@ -1,0 +1,15 @@
+{
+  "name": "Airflow Environment",
+  "image": "python:3.8-slim-buster", 
+  "postCreateCommand": "pip install apache-airflow==2.5.0",
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "/bin/bash"
+  },
+  "forwardPorts": [8080], 
+  "portsAttributes": {
+    "8080": {
+      "label": "Airflow UI",
+      "onAutoForward": "notify"
+    }
+  }
+}
